@@ -8,12 +8,17 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { Bounded } from "@/components/Bounded";
-import Button from "@/components/Button";
-import { TextSplitter } from "@/components/TextSplitter";
 import { View } from "@react-three/drei";
+
+
+import Button from "@/components/Button";
+import { Bounded } from "@/components/Bounded";
+import { TextSplitter } from "@/components/TextSplitter";
+
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
+
+import { useStore } from "@/hooks/useStore";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -26,7 +31,12 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+
+  const ready = useStore((state) => state.ready);
+
   useGSAP(() => {
+    if (!ready) return;
+
     const introTl = gsap.timeline();
 
     introTl
@@ -82,7 +92,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           y: 20,
           opacity: 0,
         })
-  });
+  }, {dependencies: [ready]});
 
   return (
     <Bounded
