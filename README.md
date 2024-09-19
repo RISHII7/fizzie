@@ -7,7 +7,7 @@ Want to quickly get started building your own project with [Prismic][prismic] an
 
 &nbsp;
 
-![Website screenshot](https://user-images.githubusercontent.com/31219208/228821412-fdde92b2-c13c-4287-b799-611fa96a5fd6.png)
+![Website screenshot](https://github.com/RISHII7/fizzie/blob/main/public/hero.png)
 
 &nbsp;
 
