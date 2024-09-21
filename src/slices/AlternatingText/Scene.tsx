@@ -66,7 +66,7 @@ export default function Scene({ }: Props) {
     }, {dependencies: [isDesktop]});
 
     return (
-        <group ref={canRef} position-x={isDesktop ? 1 : 0} rotation-7={isDesktop ? -0.3 : 0}>
+        <group ref={canRef} position-x={isDesktop ? 1 : 0} rotation-y={isDesktop ? -0.3 : 0}>
             <FloatingCan flavor="strawberryLemonade" />
             <Environment files="/hdrs/lobby.hdr" environmentIntensity={1.5} />
 
